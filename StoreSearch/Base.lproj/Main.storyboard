@@ -15,8 +15,48 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RjQ-Vf-iR6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="7hk-nc-5fj"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="1CK-xy-Zmh"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="U2r-JD-nS8">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="j0g-YW-krN"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U2r-JD-nS8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="0ZS-ES-cdC"/>
+                            <constraint firstAttribute="trailing" secondItem="U2r-JD-nS8" secondAttribute="trailing" id="2to-Ed-eXo"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="RjQ-Vf-iR6" secondAttribute="bottom" id="D0d-hz-zNf"/>
+                            <constraint firstItem="RjQ-Vf-iR6" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="UQX-Dp-bSU"/>
+                            <constraint firstItem="U2r-JD-nS8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Utu-aX-QfZ"/>
+                            <constraint firstAttribute="trailing" secondItem="U2r-JD-nS8" secondAttribute="trailing" id="YZq-NC-XEg"/>
+                            <constraint firstAttribute="trailing" secondItem="RjQ-Vf-iR6" secondAttribute="trailing" id="bSl-Qo-FKZ"/>
+                            <constraint firstItem="RjQ-Vf-iR6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="cUT-9F-sh6"/>
+                            <constraint firstItem="U2r-JD-nS8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="hh0-Su-oad"/>
+                            <constraint firstItem="U2r-JD-nS8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="xQi-I5-bqs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0ZS-ES-cdC"/>
+                                <exclude reference="2to-Ed-eXo"/>
+                                <exclude reference="hh0-Su-oad"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="U2r-JD-nS8" id="E53-Zr-e0f"/>
+                        <outlet property="tableView" destination="RjQ-Vf-iR6" id="T5Y-yc-v3H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
